@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Document</title>
+</head>
+
+<body>
+  <nav id="nav-bar">
+    <header>Git</header>
+    <ul>
+      <li><a class="nav-link" href="#adicionando_arquivos_no_git">Adicionando arquivos no Git</a></li>
+      <li><a class="nav-link" href="#removendo_arquivos_do_index">Removendo arquivos do index</a></li>
+      <li><a class="nav-link" href="#enviando_arquivos_para_o_repositorio_git">Enviando arquivos para o repositório Git</a></li>
+      <li><a class="nav-link" href="#corrigindo_o_ultimo_commit">Corrigindo o último commit</a></li>
+      <li><a class="nav-link" href="#ignorando_arquivos_no_git">Ignorando arquivos no Git</a></li>
+    </ul>
+  </nav>
+
+  <main id="main-doc">
+    <section class="main-section" id="adicionando_arquivos_no_git">
+      <header>Adicionando arquivos no Git</header>
+
+      <p>Após a criação de um arquivo ou arquivos, ele(s) ainda não estão sendo monitorados. Aqui estão algumas formas de adicioná-los.</p>
+      <p>Para adicionar um arquivo de cada vez, digite:</p>
+      <code>$ git add arquivo.extensao</code>
+      <code>$ git add arquivo2.extensao</code>
+      <p>Ou para adicionar mais de um ao mesmo tempo:</p>
+      <code>$ git add arquivo.extensao arquivo2.extensao</code>
+      <p>Caso queira adicionar todos os arquivos de um diretório recursivamente, o que inclui seus subdiretórios e arquivos ou pastas ocultas:</p>
+      <code>$ git add .</code>
+
+      <p class="creditos">Todo o conteúdo desse projeto foi baseado no excelente tutorial: <a href="https://dev.to/danielle8farias/series/5484" target="_blank">Git tutorial Series'Articles</a></p>
+    </section>
+
+    <section class="main-section" id="removendo_arquivos_do_index">
+      <header>Removendo arquivos do index</header>
+      <h3>Remoção antes do primeiro commit</h2>
+        <p>Vamos supor que adicionamos um terceiro arquivo sem querer (arquivo3.extensao). Não era o que queríamos. Então devemos tirá-lo do index. O index é como uma "sala de espera" onde ficam os arquivos que serão "commitados".</p>
+        <code>$ git rm --cached arquivo3.extensao</code>
+        <li>Esse código é apenas para o caso de não ter sido feito nenhum commit ainda.</li>
+        <p>Para retirar todos os arquivos, podemos usar o comando:</p>
+        <code>$ git rm --cached -r *</code>
+        <h3>Remoção após o primeiro commit</h3>
+        <p>Caso não seja o primeiro commit e você precise excluir um arquivo do index, utilize o comando:</p>
+        <code>$ git reset HEAD arquivo.extensao</code>
+        <p>Para retirar do index todos os arquivos, digite:</p>
+        <code>$ git reset HEAD .</code>
+    </section>
+
+    <section class="main-section" id="enviando_arquivos_para_o_repositorio_git">
+      <header>Enviando arquivos para o repositório Git</header>
+      <p>Vamos supor que temos no nosso repositório a seguinte situação: temos dois arquivos novos e vamos fazer o nosso primeiro commit.</p>
+      <p>Ao colocar os arquivos dentro do repositório, precisamos informar ao Git o motivo desses arquivos, com o comando:</p>
+      <code>$ git commit -m 'escreva sua mensagem aqui'</code>
+      <li>pode-se usar aspas simples ou duplas para escrever a mensagem.</li>
+    </section>
+
+    <section class="main-section" id="corrigindo_o_ultimo_commit">
+      <header>Corrigindo o último commit</header>
+      <p>Vamos supor que adicionei dois arquivos com os seguintes commits:</p>
+      <code>$ git add index.html estilo.css<br>$ git commit -m 'adicionando arquivo html e css'</code>
+      <p>E em seguida, adiciono mais outro, mas com o commit errado:</p>
+      <code>$ git add script.js<br>$ git commit -m 'script python'</code>
+      <p>Vamos modificar o último commit com o seguinte comando:</p>
+      <code>$ git commit --amend -m 'adicionando script js'</code>
+    </section>
+
+    <section class="main-section" id="ignorando_arquivos_no_git">
+      <header>Ignorando arquivos no Git</header>
+      <p>Caso você queira que o git não enxergue determinados arquivos dentro do seu diretório que está sendo rastreado, precisamos criar o seguinte arquivo:</p>
+      <code>$ touch .gitignore</code>
+      <li>o comando touch serve para criar arquivos no Linux pelo terminal.</li>
+      <li>.gitignore deve ser o nome do nosso arquivo de texto.</li>
+      <p>Abrindo esse arquivo, vamos digitar dentro dele o que queremos deixar de fora do repositório. É importante notar que devemos informar um tipo de arquivo por linha.</p>
+      <p>Os arquivos descritos dentro do arquivo .gitignore não aparecem no Working directory.</p>
+      <li><strong>Working directory:</strong> é onde estão seus arquivos que serão trabalhados. Onde ficam os arquivos que ainda não receberam o comando commit.</li>
+      <p>Agora basta <a href="#adicionando_arquivos_no_git">adicionar</a> o arquivo .gitignore e fazer o <a href="#enviando_arquivos_para_o_repositorio_git">commit</a> dele.</p>
+    </section>
+  </main>
+</body>
+
+</html>

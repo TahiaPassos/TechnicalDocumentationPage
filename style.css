@@ -1,0 +1,157 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+}
+
+#nav-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 25%;
+  height: 100vh;
+  background: cadetblue;
+}
+
+#nav-bar header {
+  color: white;
+  padding: 30px;
+  border-bottom: 1px solid rgb(87, 86, 86);
+  box-shadow: 0 8px 8px -2px #535353;
+  font-size: 2rem;
+  text-align: center;
+}
+
+#nav-bar ul {
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+#nav-bar ul li {
+  text-align: center;
+  border-bottom: 1px solid rgb(26, 112, 112);
+  cursor: pointer;
+}
+
+#nav-bar ul li a:hover {
+  box-shadow: none;
+  box-shadow: 0 8px 8px -2px #535353;
+  transition: background-color 0.7s;
+  background-color: rgb(80, 131, 133);
+}
+
+.nav-link {
+  display: block;
+  text-decoration: none;
+  list-style: none;
+  color: white;
+  padding: 20px 0;
+}
+
+#main-doc {
+  margin-left: 25%;
+  width: 75%;
+  transition: 0.6s ease-in-out;
+}
+
+.main-section {
+  height: 100vh;
+  padding: 20px 40px;
+  font-size: 1.125rem;
+  line-height: 2rem;
+}
+
+.main-section header {
+  font-size: 2rem;
+  padding-bottom: 15px;
+}
+
+.main-section li {
+  margin-bottom: 10px;
+}
+
+code {
+  display: block;
+  width: 60%;
+  margin-bottom: 15px;
+  padding: 15px;
+  height: 30px;
+  margin-top: 10px;
+  font-size: 1.3rem;
+  border-radius: 8px;
+  background-color: black;
+  color: rgb(49, 243, 42);
+}
+
+#corrigindo_o_ultimo_commit code {
+  height: 60px;
+}
+
+.creditos {
+  margin-top: 20px;
+  width: 100%;
+  padding: 10px 15px;
+  text-align: center;
+  background-color: rgb(196, 191, 191);
+}
+
+.creditos a {
+  text-decoration: none;
+}
+
+@media (max-width: 1200px) {
+  #nav-bar {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    max-height: 130px;
+    background: cadetblue;
+  }
+
+  #nav-bar header {
+    color: white;
+    padding: 10px;
+  }
+
+  #nav-bar ul {
+    display: flex;
+    justify-content: center;
+  }
+
+  #nav-bar ul li {
+    list-style: none;
+    border: none;
+    font-size: 0.9rem;
+    padding: 5px;
+    margin-right: 5px;
+  }
+
+  #nav-bar ul li a:hover {
+    box-shadow: none;
+    transition: none;
+    background-color: transparent;
+  }
+
+  #main-doc {
+    margin-left: 0;
+    margin: 120px auto 0 auto;
+    width: 90%;
+  }
+
+  .main-section {
+    height: 100%;
+  }
+
+  code {
+    width: 100%;
+    min-height: 80px;
+  }
+}
